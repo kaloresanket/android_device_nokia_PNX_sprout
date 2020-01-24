@@ -435,6 +435,14 @@ PRODUCT_PACKAGES += \
     CarrierConfigOverlay \
     librmnetctl
 
+<<<<<<< HEAD
+=======
+# Charger images
+PRODUCT_PACKAGES += \
+    charger_res_images \
+    product_charger_res_images
+>>>>>>> 57d7ff8 (potter: Use Pixel offline charger animation)
+
 # Ramdisk
 PRODUCT_PACKAGES += \
     init.class_main.sh \
