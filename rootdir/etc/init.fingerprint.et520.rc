@@ -1,0 +1,27 @@
+on fs
+    chown system system /dev/esfp0
+    chmod 666 /dev/esfp0
+
+# Egistec fingerprint feature
+on post-fs-data
+    mkdir /persist/egis 0700 system system
+    chmod 0660 /sys/devices/platform/egis_input/navigation_event
+    chmod 0660 /sys/devices/platform/egis_input/navigation_enable
+    chmod 0660 /sys/devices/soc/0.et320/etspi_enable
+    chown system system /sys/devices/platform/egis_input/navigation_enable
+    chown system system /sys/devices/platform/egis_input/navigation_event
+    chown system system /sys/devices/soc/0.et320/etspi_enable
+    mkdir /data/system/users/0/fpdata 0700 system system
+    restorecon_recursive /data/system/users/0/fpdata
+
+service fps_hal_ets /vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service-ets
+    # "class hal" causes a race condition on some devices due to files created
+    # in /data. As a workaround, postpone startup until later in boot once
+    # /data is mounted.
+    class late_start
+    user system
+    group system input
+
+on property:vendor.egfp.version=*
+    setprop vendor.fp.firmware.version  Eg-${vendor.egfp.version}
+
