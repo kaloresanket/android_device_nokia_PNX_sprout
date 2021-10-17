@@ -1,0 +1,78 @@
+import /vendor/etc/init/hw/init.fingerprint.${ro.boot.fp}.rc
+import /vendor/etc/init/hw/init.msm.usb.configfs.rc
+
+on init
+    setprop persist.vendor.fih.dbg.dev.info 2
+
+on boot
+    # Set panel permissions
+	chown system system /proc/AllHWList/LCM0
+	chown system system /proc/AllHWList/LCM0/panelid
+	chown system system /proc/AllHWList/LCM0/fs_curr
+	chmod 777 /proc/AllHWList/LCM0
+	chmod 664 /proc/AllHWList/LCM0/panelid
+	chmod 664 /proc/AllHWList/LCM0/fs_curr
+
+    # Set touch permissions
+    chown system system /proc/AllHWList/tp_fw_ver
+    chown system system /proc/AllHWList/tp_self_test
+    chown system system /proc/AllHWList/tp_upgrade
+    chown system system /proc/AllHWList/tp_alt_rst
+    chown system system /proc/AllHWList/tp_alt_st_count
+    chown system system /proc/AllHWList/tp_alt_st_enable
+    chown system system /proc/AllHWList/tp_double_tap
+
+    chmod 644 /proc/AllHWList/tp_self_test
+    chmod 444 /proc/AllHWList/tp_fw_ver
+    chmod 644 /proc/AllHWList/tp_upgrade
+    chmod 644 /proc/AllHWList/tp_alt_rst
+    chmod 644 /proc/AllHWList/tp_alt_st_count
+    chmod 644 /proc/AllHWList/tp_alt_st_enable
+    chmod 644 /proc/AllHWList/tp_double_tap
+
+    # Set emmc permissions
+    chown system system /proc/AllHWList/emmcinfo
+    chown system system /proc/AllHWList/draminfo
+    chown system system /proc/AllHWList/dramtest_result
+    chmod 664 /proc/AllHWList/emmcinfo
+    chmod 664 /proc/AllHWList/draminfo
+    chmod 664 /proc/AllHWList/dramtest_result
+
+# we change gp_persist_path from /persist/data/ to /vendor/securefs/data/
+on fs
+    mkdir /vendor/securefs/data 0700 system system
+
+    # Mount chromatix
+    wait /dev/block/bootdevice/by-name/chromatix
+    mount ext4 /dev/block/bootdevice/by-name/chromatix /vendor/chromatix noatime nosuid nodev barrier=1 context=u:object_r:chromatix_file:s0
+    chown system system /vendor/chromatix
+    restorecon_recursive /vendor/chromatix
+
+on post-fs-data
+    # Create touch dir
+    mkdir /data/vendor/misc/touch 0770 system system
+
+    # NFC storage
+    mkdir /data/vendor/nfc
+
+    # NFC permission
+    chown nfc nfc /dev/sec-nfc
+    chmod 0770 /dev/sec-nfc
+    chown nfc nfc /data/vendor/nfc
+    chmod 0770 /data/vendor/nfc
+
+    # Start sensor script
+    start vendor.e2p-sh
+
+on zygote-start
+    mkdir /data/preloads 0775 system system
+    mkdir /data/preloads/media 0775 system system
+    mkdir /data/preloads/demo 0775 system system
+
+    write /sys/class/net/wlan0/mtu 1500
+
+service vendor.e2p-sh /vendor/bin/init.sensor.e2pwrite.sh
+    class late_start
+    user root
+    disabled
+    oneshot
