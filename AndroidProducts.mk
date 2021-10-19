@@ -5,4 +5,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/dot_PNX_sprout.mk
+    $(LOCAL_DIR)/descendant_PNX_sprout.mk
