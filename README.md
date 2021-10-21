@@ -20,6 +20,6 @@ Nokia 8.1 (PNX_sprout) a high-end smartphone from Nokia, announced and released 
 
 How to build
 
-. build/envsetup.sh && lunch dot_PNX_sprout-userdebug
+. build/envsetup.sh && lunch descendant_PNX_sprout-userdebug
 
-make bacon
+mka descendant
