@@ -53,6 +53,9 @@ TARGET_NO_BOOTLOADER := true
 # Build system
 BUILD_BROKEN_DUP_RULES := true
 
+# CNE and DPM
+BOARD_USES_QCNE := true
+
 # Display
 TARGET_HAS_HDR_DISPLAY := true
 TARGET_HAS_WIDE_COLOR_DISPLAY := true
