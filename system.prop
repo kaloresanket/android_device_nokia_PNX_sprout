@@ -140,7 +140,6 @@ ro.vendor.qti.core_ctl_max_cpu=4
 iorapd.readahead.enable=true
 ro.iorapd.enable=true
 
-
 #test
 ro.treble.enabled=false
 

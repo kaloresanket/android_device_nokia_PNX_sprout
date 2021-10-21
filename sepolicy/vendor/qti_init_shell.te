@@ -1,17 +1,13 @@
-# RFS
-typeattribute qti_init_shell data_between_core_and_vendor_violators;
+allow qti_init_shell configfs:dir { write add_name create };
+allow qti_init_shell configfs:file { create };
+allow qti_init_shell configfs:lnk_file create;
 
-type_transition qti_init_shell system_data_file:dir data_rfs_shared_hlos_file "fih_atl";
-type_transition qti_init_shell system_data_file:dir data_rfs_shared_hlos_file "fih_mcfg";
-
-allow qti_init_shell data_rfs_shared_hlos_file:dir create_dir_perms;
-allow qti_init_shell data_rfs_shared_hlos_file:file create_file_perms;
-
-allow qti_init_shell configfs:dir rw_dir_perms;
-allow qti_init_shell configfs:file create_file_perms;
-
-allow qti_init_shell sensors_persist_file:fifo_file { getattr setattr };
-
-allow qti_init_shell sysfs_leds:dir setattr;
-allow qti_init_shell sysfs_leds:file setattr;
-dontaudit qti_init_shell sysfs:dir setattr;
+allow qti_init_shell default_prop:file { read };
+allow qti_init_shell system_prop:file { read };
+allow qti_init_shell exported2_system_prop:property_service { set };
+allow qti_init_shell system_prop:property_service { set };
+allow qti_init_shell exported_system_radio_prop:file { read };
+allow qti_init_shell system_prop:property_service { set };
+allow qti_init_shell ctl_stop_prop:property_service {  set };
+allow qti_init_shell sensors_vendor_data_file:dir { search };
+allow qti_init_shell vendor_data_file:dir { read write };

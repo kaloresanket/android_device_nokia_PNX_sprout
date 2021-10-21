@@ -1,0 +1,3 @@
+allow sensors sensors_vendor_data_file:fifo_file { create };
+
+allow sensors proc_tp:file r_file_perms;

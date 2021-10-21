@@ -1,0 +1,3 @@
+allow netmgrd property_socket:sock_file { write };
+
+set_prop(netmgrd, vendor_radio_prop)

@@ -3,6 +3,18 @@ allow vendor_init sysfs_ssr_toggle:file w_file_perms;
 
 typeattribute vendor_init data_between_core_and_vendor_violators;
 
+# Allow to setattr to /dev/block/bootdevice/by-name/rawdump
+allow vendor_init block_device:lnk_file setattr;
+
+# Allow to set ro.vendor.gpu.available_frequencies
+allow vendor_init freq_prop:property_service set;
+
+# Allow to read persist.debug.trace
+allow vendor_init persist_debug_prop:file read;
+
+# Allow vendor_init to write to sysfs_ssr_toggle
+allow vendor_init sysfs_ssr_toggle:file w_file_perms;
+
 allow vendor_init {
     data_rfs_shared_hlos_file
     system_data_file

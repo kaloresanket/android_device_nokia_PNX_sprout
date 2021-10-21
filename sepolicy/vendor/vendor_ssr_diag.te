@@ -1,0 +1,1 @@
+allow vendor_ssr_diag sysfs:file { read };

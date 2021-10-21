@@ -1,4 +1,12 @@
 typeattribute rild data_between_core_and_vendor_violators;
 
+allow rild proc:file { read };
+allow rild vendor_data_file:file { read write };
+
+dontaudit rild tombstone_data_file:dir search;
+dontaudit rild vendor_data_file:file ioctl;
+
+set_prop(rild, deviceid_prop)
+
 allow rild data_rfs_shared_hlos_file:dir r_dir_perms;
 allow rild data_rfs_shared_hlos_file:file rw_file_perms;

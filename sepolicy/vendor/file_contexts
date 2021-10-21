@@ -19,3 +19,10 @@
 # Services
 /vendor/bin/wireless_init                                                                               u:object_r:wireless_init_exec:s0
 /vendor/bin/init\.sensor\.e2pwrite\.sh                                                                  u:object_r:sensors_e2p_exec:s0
+
+# Persist files
+/mnt/vendor/persist/audio(/.*)?               u:object_r:persist_audio_file:s0
+/mnt/vendor/persist/camera(/.*)?              u:object_r:persist_camera_file:s0
+
+# Sockets
+/dev/socket/audio_hw_socket                   u:object_r:audio_socket:s0
