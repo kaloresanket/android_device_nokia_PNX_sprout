@@ -1,0 +1,2 @@
+# /dev/goodix_fp
+type goodix_device, dev_type;

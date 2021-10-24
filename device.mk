@@ -188,6 +188,14 @@ PRODUCT_PACKAGES += \
     libvndfwk_detect_jni.qti \
     libvndfwk_detect_jni.qti.vendor
 
+# Fingerprint
+PRODUCT_PACKAGES += \
+    android.hardware.biometrics.fingerprint@2.1 \
+    android.hardware.biometrics.fingerprint@2.1-service
+
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.fingerprint.xml:system/etc/permissions/android.hardware.fingerprint.xml
+
 # GPS
 PRODUCT_PACKAGES += \
     libwifi-hal-ctrl \
@@ -301,8 +309,9 @@ PRODUCT_COPY_FILES += \
 
 # NFC
 PRODUCT_PACKAGES += \
-    android.hardware.nfc@1.2-service.samsung \
+    android.hardware.nfc@1.2-service \
     NfcNci \
+    SecureElement \
     Tag \
     com.android.nfc_extras
 

@@ -2,10 +2,11 @@ genfscon proc  /sensordata                                                     u
 
 genfscon proc  /wifi_mac                                                       u:object_r:proc_wifi_mac:s0
 
-genfscon sysfs /devices/platform/soc/soc:fpc1020/irq                           u:object_r:sysfs_fingerprint:s0
-genfscon sysfs /devices/platform/soc/soc:fpc1020/wakeup_enable                 u:object_r:sysfs_fingerprint:s0
-
-genfscon sysfs /devices/platform/soc/890000.i2c/i2c-3/3-0032                   u:object_r:sysfs_leds:s0
+genfscon sysfs /devices/platform/soc/soc:fingerprint_fpc/device_prepare        u:object_r:sysfs_fingerprint:s0
+genfscon sysfs /devices/platform/soc/soc:fingerprint_fpc/fingerdown_wait       u:object_r:sysfs_fingerprint:s0
+genfscon sysfs /devices/platform/soc/soc:fingerprint_fpc/irq                   u:object_r:sysfs_fingerprint:s0
+genfscon sysfs /devices/platform/soc/soc:fingerprint_fpc/wakeup_enable         u:object_r:sysfs_fingerprint:s0
+genfscon sysfs /devices/platform/soc/soc:fingerprint_goodix/proximity_state    u:object_r:sysfs_fingerprint:s0
 
 genfscon sysfs /devices/platform/soc/17300000.qcom,lpass/subsys4/restart_level u:object_r:sysfs_ssr_toggle:s0
 genfscon sysfs /devices/platform/soc/188101c.qcom,spss/subsys0/restart_level   u:object_r:sysfs_ssr_toggle:s0
