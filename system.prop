@@ -12,6 +12,9 @@ tunnel.audio.encode = true
 tunnel.audiovideo.decode=false
 tunnel.decode=false
 use.voice.path.for.pcm.voip=true
+vendor.audio.feature.maxx_audio.enable=true
+ro.audio.monitorRotation=true
+vendor.audio.feature.audiozoom.enable=true
 
 # Bluetooth
 persist.bluetooth.a2dp_offload.disabled=false
@@ -82,10 +85,36 @@ ro.opa.device_model_id=camera-880e6-nokia-8.1-rg4bqo
 # Navigation
 qemu.hw.mainkeys=0
 
-# NFC
-ro.nfc.port=I2C
-ro.hardware.nfc_nci=sec
-ro.boot.nfc=sec
+#Google keyboardf(pixilize)
+ro.com.google.ime.theme_file=veulight.zip
+ro.com.google.ime.d_theme_file=veu.zip
+ro.com.google.ime.corner_key_r=35
+ro.treble.enabled=false
+
+#Memory
+debug.performance.tuning=1
+debug.sf.hw=1
+debug.composition.type=c2d
+debug.gralloc.enable_fb_ubwc=1
+dev.pm.dyn_samplingrate=1
+hwui.disable_vsync=true
+ro.config.enable.hw_accel=true
+ro.vendor.qti.sys.fw.bservice_enable=true
+debug.egl.buffcount=4
+
+#Imporve UI
+persist.cust.tel.eons=1
+hw3d.force=1
+view.touch_slop=1
+view.scroll_friction=0
+ro.max.fling_velocity=20000
+ro.min.fling_velocity=8000
+ro.fb.mode=1
+ro.config.hw_fast_dormancy=1
+windowsmgr.max_events_per_sec=150
+ro.min_pointer_dur=8 
+persist.sys.scrollingcache=3
+persist.sys.purgeable_assets=1
 
 # IMS
 persist.dbg.volte_avail_ovr=1
