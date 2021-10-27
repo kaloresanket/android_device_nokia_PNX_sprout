@@ -1,6 +1,6 @@
 Device tree for the Nokia 8.1
 ================================================
-The Nokia 8.1 model is a flagship Nokia-branded smartphone running the Android operating system. Announced on October 16, 2018 in Dubai.
+The Nokia 8.1 model is a flagship Nokia-branded smartphone running the Android operating system. Announced on October 16, 2018.
 
 ## Device specifications
 | Basic                   | Specifications                                                                                                                     |
