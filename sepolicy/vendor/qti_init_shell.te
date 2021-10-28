@@ -16,7 +16,7 @@ allow qti_init_shell vendor_data_file:file { read write getattr };
 
 allow qti_init_shell configfs:dir { read write create add_name };
 allow qti_init_shell configfs:lnk_file { read write create };
-allow qti_init_shell sensors_vendor_data_file:dir { search open };
+allow qti_init_shell sensors_vendor_data_file:dir { search open getattr read };
 allow qti_init_shell configfs:file create_file_perms;
 allow qti_init_shell ctl_stop_prop:property_service { set };
 
