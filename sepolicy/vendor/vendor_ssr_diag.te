@@ -1,2 +1,3 @@
 allow vendor_ssr_diag sysfs:file r_file_perms;
 allow vendor_ssr_diag property_socket:sock_file rw_file_perms;
+allow vendor_ssr_diag init:unix_stream_socket { connectto };
