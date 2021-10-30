@@ -8,6 +8,21 @@ genfscon sysfs /devices/platform/soc/soc:fingerprint_fpc/irq                   u
 genfscon sysfs /devices/platform/soc/soc:fingerprint_fpc/wakeup_enable         u:object_r:sysfs_fingerprint:s0
 genfscon sysfs /devices/platform/soc/soc:fingerprint_goodix/proximity_state    u:object_r:sysfs_fingerprint:s0
 
+# /proc/devmodel - Sensors
+genfscon proc /devmodel u:object_r:proc_fih:s0
+
+# /proc/bandinfo - Radio
+genfscon proc /bandinfo            u:object_r:proc_bandinfo:s0
+
+# /proc/AllHWLis/* - Gestures
+genfscon proc /AllHWList/tp_double_tap   u:object_r:proc_fih:s0
+
+# /proc/hwmodel - Model
+genfscon proc /hwmodel            u:object_r:proc_fih:s0
+
+# /proc/baseband - Baseband
+genfscon proc /baseband            u:object_r:proc_fih:s0
+
 genfscon sysfs /devices/platform/soc/17300000.qcom,lpass/subsys4/restart_level u:object_r:sysfs_ssr_toggle:s0
 genfscon sysfs /devices/platform/soc/188101c.qcom,spss/subsys0/restart_level   u:object_r:sysfs_ssr_toggle:s0
 genfscon sysfs /devices/platform/soc/4080000.qcom,mss/subsys7/restart_level    u:object_r:sysfs_ssr_toggle:s0
