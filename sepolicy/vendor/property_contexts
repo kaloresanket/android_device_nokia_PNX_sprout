@@ -7,6 +7,7 @@ ro.camera.res.fmq.size                                                          
 ro.product.model.num                                                                 u:object_r:exported_default_prop:s0
 
 # Fingerprint
+sys.fp.firmware.version			u:object_r:fingerprint_prop:s0
 fpc_kpi                                                                              u:object_r:vendor_fp_prop:s0
 persist.vendor.sys.fp.     u:object_r:vendor_fp_prop:s0
 ro.boot.fpsensor           u:object_r:vendor_fp_prop:s0
