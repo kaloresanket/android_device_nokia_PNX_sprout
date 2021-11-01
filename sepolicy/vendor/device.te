@@ -1,5 +1,2 @@
 # /dev/goodix_fp
 type goodix_device, dev_type;
-
-# /dev/esfp0_fp
-type esfp0_device, dev_type;
