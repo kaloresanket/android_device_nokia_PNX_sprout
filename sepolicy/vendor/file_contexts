@@ -2,13 +2,14 @@
 /dev/block/platform/soc/1d84000\.ufshc/by-name/securefs                                                 u:object_r:securefs_block_device:s0
 
 #Fingerprint
-/dev/goodix_fp                                        u:object_r:goodix_device:s0
+/dev/goodix_fp                                        u:object_r:goodixfingerprintd_device:s0
+/dev/et520                                        u:object_r:goodixfingerprintd_device:s0
 
 # HALs
 /(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-service\.nokia_sdm710 u:object_r:hal_fingerprint_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-service-ets\.nokia_sdm710  u:object_r:hal_fingerprint_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.light@2\.0-service\.nokia_sdm710          u:object_r:hal_light_default_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.neuralnetworks@1\.3-service-qti u:object_r:hal_neuralnetworks_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.power\.stats@1\.0-service\.mock   u:object_r:hal_power_stats_default_exec:s0
 
 # Health
 /sys/devices/platform/soc/89c000.i2c/i2c-5/5-0061/power_supply/wireless(/.*)?                           u:object_r:sysfs_wireless_supply:s0
@@ -32,17 +33,18 @@
 /firmware(/.*)?          u:object_r:firmware_file:s0
 /persist(/.*)?           u:object_r:mnt_vendor_file:s0
 
+# Sensors
+/persist/sensors(/.*)?          u:object_r:sensors_persist_file:s0
+
+# Thermal
+/vendor/bin/hw/android\.hardware\.thermal@2\.0-service\.qti                u:object_r:hal_thermal_default_exec:s0
+
 # Graphics nodes
 /sys/class/kgsl(/.*)?                         u:object_r:sysfs_kgsl:s0
 /sys/devices/platform/soc/[a-z0-9]+.qcom,mdss_mdp/drm/card([0-3])+/card([0-3])+-DSI-1/disp_param        u:object_r:sysfs_graphics:s0
 /sys/devices/platform/soc/[a-z0-9]+.qcom,mdss_mdp/drm/card([0-3])+/card([0-3])+-DSI-1/hbm_status        u:object_r:sysfs_graphics:s0
 /sys/devices/platform/soc/[a-z0-9]+.qcom,mdss_mdp/drm/card([0-3])+/card([0-3])+-DSI-1/panel_info        u:object_r:sysfs_graphics:s0
 
-# Data files
-/data/vendor/nfc(/.*)?                                              u:object_r:nfc_vendor_data_file:s0
-/data/vendor/gf_data(/.*)?                            u:object_r:fp_gf_vendor_file:s0
-
 # Services
-/(vendor|system/vendor)/bin/wireless_init              u:object_r:wireless_tools_exec:s0
+/(vendor|system/vendor)/bin/wireless_init                                           u:object_r:wireless_init_exec:s0
 /(vendor|system/vendor)/bin/init\.sensor\.e2pwrite\.sh              u:object_r:qti_init_shell_exec:s0
-/(vendor|system/vendor)/bin/wlan_carrier_bin\.sh         u:object_r:init_wifi_exec:s0

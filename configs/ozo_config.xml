@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<OzoConfig>
+  <DeviceIDs>
+    <DeviceID>A60E0C96-DC66-4B53-8518-4C072370A870</DeviceID>
+    <DeviceID>A60E0C96-DC66-4B53-8518-4C072370A871</DeviceID>
+    <DeviceID>A60E0C96-DC66-4B53-8518-4C072370A872</DeviceID>
+    <DeviceID>A60E0C96-DC66-4B53-8518-4C072370A873</DeviceID>
+    <DeviceID>A60E0C96-DC66-4B53-8518-4C072370A874</DeviceID>
+    <DeviceID>A60E0C96-DC66-4B53-8518-4C072370A875</DeviceID>
+  </DeviceIDs>
+  <NumMics>2</NumMics>
+  <Functions>
+    <Function>surround</Function>
+  </Functions>
+  <AudioFormat>0</AudioFormat>
+</OzoConfig>

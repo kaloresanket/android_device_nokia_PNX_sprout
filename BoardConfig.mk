@@ -16,6 +16,9 @@ AB_OTA_PARTITIONS += \
     system \
     vendor
 
+# ANT+
+BOARD_ANT_WIRELESS_DEVICE := "qualcomm-hidl"
+
 # Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
@@ -53,6 +56,9 @@ TARGET_NO_BOOTLOADER := true
 # Build system
 BUILD_BROKEN_DUP_RULES := true
 
+# CNE and DPM
+BOARD_USES_QCNE := true
+
 # Display
 TARGET_HAS_HDR_DISPLAY := true
 TARGET_HAS_WIDE_COLOR_DISPLAY := true
@@ -62,6 +68,10 @@ TARGET_ENABLE_MEDIADRM_64 := true
 
 # Filesystem
 TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
+
+# FM
+BOARD_HAVE_QCOM_FM := true
+BOARD_HAS_QCA_FM_SOC := "cherokee"
 
 # GPS
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := true
@@ -92,6 +102,9 @@ TARGET_KERNEL_VERSION := 4.9
 TARGET_KERNEL_CLANG_COMPILE := true
 TARGET_KERNEL_CLANG_VERSION := r383902b1
 
+# LMKD
+TARGET_LMKD_STATS_LOG := true
+
 # HIDL
 DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml
 DEVICE_MATRIX_FILE := $(DEVICE_PATH)/compatibility_matrix.xml
@@ -99,6 +112,9 @@ DEVICE_MATRIX_FILE := $(DEVICE_PATH)/compatibility_matrix.xml
 # Init
 TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_pnx
 TARGET_RECOVERY_DEVICE_MODULES := libinit_pnx
+
+# Keystore
+TARGET_PROVIDES_KEYMASTER := true
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 67108864
@@ -112,6 +128,11 @@ TARGET_USERIMAGES_USE_F2FS := true
 
 # Platform
 TARGET_BOARD_PLATFORM := sdm710
+
+# Power
+TARGET_POWERHAL_MODE_EXT := $(DEVICE_PATH)/power/power-mode.cpp
+TARGET_USES_INTERACTION_BOOST := true
+TARGET_TAP_TO_WAKE_NODE := "/proc/AllHWList/tp_double_tap"
 
 # Properties
 TARGET_SYSTEM_EXT_PROP += $(DEVICE_PATH)/system_ext.prop
@@ -128,6 +149,9 @@ BOARD_USES_RECOVERY_AS_BOOT := true
 TARGET_NO_RECOVERY := true
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery.fstab
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
+
+# RenderScript
+OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 
 # RIL
 ENABLE_VENDOR_RIL_SERVICE := true

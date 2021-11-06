@@ -89,7 +89,8 @@ qemu.hw.mainkeys=0
 ro.com.google.ime.theme_file=veulight.zip
 ro.com.google.ime.d_theme_file=veu.zip
 ro.com.google.ime.corner_key_r=35
-ro.treble.enabled=false
+ro.opa.eligible_device=true
+ro.charger.enable_suspend=true
 
 #Memory
 debug.performance.tuning=1
