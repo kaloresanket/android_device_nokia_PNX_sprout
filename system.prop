@@ -149,6 +149,10 @@ persist.data.df.agg.dl_size=4096
 persist.data.df.mux_count=8
 persist.data.df.iwlan_mux=9
 
+# IORap
+iorapd.readahead.enable=true
+ro.iorapd.enable=true
+
 # Time
 persist.timed.enable=true
 
