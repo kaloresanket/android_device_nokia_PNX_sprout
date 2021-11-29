@@ -3,13 +3,7 @@
 
 #Fingerprint
 /dev/goodix_fp                                        u:object_r:goodixfingerprintd_device:s0
-/dev/et520                                        u:object_r:goodixfingerprintd_device:s0
-
-# HALs
-/(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-service\.nokia_sdm710 u:object_r:hal_fingerprint_default_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-service-ets\.nokia_sdm710  u:object_r:hal_fingerprint_default_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.light@2\.0-service\.nokia_sdm710          u:object_r:hal_light_default_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.power\.stats@1\.0-service\.mock   u:object_r:hal_power_stats_default_exec:s0
+/dev/esfp0                                        u:object_r:goodixfingerprintd_device:s0
 
 # Health
 /sys/devices/platform/soc/89c000.i2c/i2c-5/5-0061/power_supply/wireless(/.*)?                           u:object_r:sysfs_wireless_supply:s0
