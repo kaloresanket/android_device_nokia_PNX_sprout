@@ -17,6 +17,7 @@ TARGET_BOOT_ANIMATION_RES := 1080
 
 #GAPPS
 TARGET_GAPPS_ARCH := arm64
+WITH_GAPPS := true
 
 PRODUCT_NAME := dot_PNX_sprout
 PRODUCT_DEVICE := PNX_sprout
@@ -29,7 +30,7 @@ PRODUCT_GMS_CLIENTID_BASE := android-hmd-rev2
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_DEVICE=PNX_sprout \
     PRODUCT_NAME=Phoenix_00WW \
-    PRIVATE_BUILD_DESC="PNX_00WW_FIH-user 11 00WW_6_210 00WW_6_210 release-keys"
+    PRIVATE_BUILD_DESC="redfin-user 11 RQ3A.210905.001 7511028 release-keys"
 
 # Set BUILD_FINGERPRINT variable to be picked up by both system and vendor build.prop
-BUILD_FINGERPRINT := google/redfin/redfin:11/RQ1A.211005.003/7005429:user/release-keys
+BUILD_FINGERPRINT := google/redfin/redfin:11/RQ3A.210905.001/7511028:user/release-keys
