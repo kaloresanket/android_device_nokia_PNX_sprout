@@ -15,3 +15,6 @@ persist.device_config.runtime_native_boot.iorap_readahead_enable=true
 
 # Dex2oat
 dalvik.vm.dex2oat64.enabled=true
+
+# RCS
+persist.rcs.supported=1
