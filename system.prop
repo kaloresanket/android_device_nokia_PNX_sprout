@@ -146,6 +146,9 @@ persist.data.df.iwlan_mux=9
 # Time
 persist.timed.enable=true
 
+# VSync
+debug.cpurend.vsync=false
+
 # Wfd
 persist.debug.wfd.enable=1
 persist.sys.wfd.virtual=0
