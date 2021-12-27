@@ -72,6 +72,9 @@ debug.stagefright.ccodec=1
 ro.media.recorder-max-base-layer-fps=60
 debug.stagefright.omx_default_rank=0
 
+# Memory optimizations
+ro.vendor.qti.sys.fw.bservice_enable=true
+
 # Misc
 sys.qca1530=detect
 persist.sys.force_sw_gles=1
@@ -114,7 +117,8 @@ ro.config.hw_fast_dormancy=1
 windowsmgr.max_events_per_sec=150
 ro.min_pointer_dur=8 
 persist.sys.scrollingcache=3
-persist.sys.purgeable_assets=
+persist.sys.purgeable_assets=1
+ro.surface_flinger.max_frame_buffer_acquired_buffers=3
 
 # QC framework value-adds
 ro.vendor.qti.va_aosp.support=1
@@ -152,6 +156,10 @@ debug.cpurend.vsync=false
 # Wfd
 persist.debug.wfd.enable=1
 persist.sys.wfd.virtual=0
+
+# SSR
+persist.vendor.ssr.enable_ramdumps=0
+persist.vendor.ssr.restart_level=ALL_ENABLE
 
 # Wifi
 ro.boot.wificountrycode=US
