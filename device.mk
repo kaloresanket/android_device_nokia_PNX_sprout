@@ -267,6 +267,10 @@ PRODUCT_PACKAGES += \
     libhwbinder \
     libhwbinder.vendor
 
+# HotwordEnrollement app permissions
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/privapp-permissions-hotword.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-hotword.xml
+
 # IDC
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/idc/goodix_fp.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/goodix_fp.idc \
