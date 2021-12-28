@@ -603,7 +603,7 @@ PRODUCT_PACKAGES += \
     libwfdaac_vendor
 
 PRODUCT_BOOT_JARS += \
-    WfdCommon 
+    WfdCommon
 
 # Inherit vendor
 $(call inherit-product, vendor/nokia/PNX_sprout/PNX_sprout-vendor.mk)
